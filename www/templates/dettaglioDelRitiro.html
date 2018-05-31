@@ -1,0 +1,24 @@
+<ion-view title="Dettaglio del ritiro" id="page10">
+  <ion-content padding="false" class="has-header">
+    <div id="dettaglioDelRitiro-container13" class="beta-container">
+      <h4 id="dettaglioDelRitiro-heading20" style="color:#000000;">{{pickup.title}}</h4>
+      <div ng-bind-html="pickup.content"></div>
+      <div class="spacer" style="width: 290px; height: 25px;"></div>
+      <ion-list id="dettaglioDelRitiro-list13">
+        <ion-item class="item-icon-left assertive" id="dettaglioDelRitiro-list-item99">
+          <i class="icon ion-android-list"></i>Cer : {{pickup.pickups_codice_cer}}</ion-item>
+        <ion-item class="item-icon-left energized" id="dettaglioDelRitiro-list-item103">
+          <i class="icon ion-android-list"></i>Status : {{pickup.status_pickup}}</ion-item>
+        <ion-item class="item-icon-left" id="dettaglioDelRitiro-list-item100">
+          <i class="icon ion-android-calendar"></i>Data : {{pickup.date_pickup}}</ion-item>
+        <ion-item class="item-icon-left" id="dettaglioDelRitiro-list-item101">
+          <i class="icon ion-cube"></i>Peso : {{pickup.pickups_weight}}</ion-item>
+      </ion-list>
+      <div class="spacer" style="width: 290px; height: 25px;"></div>
+      <h5 id="dettaglioDelRitiro-heading24" style="color:#000000;">Operatore</h5>
+      <ion-list id="dettaglioDelRitiro-list14">
+        <ion-item id="dettaglioDelRitiro-list-item102">{{pickup.conveyor}}</ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view title="Home" id="page12">
+  <ion-content padding="false" class="manual-remove-top-padding has-header">
+    <div id="home-button-bar1" class="button-bar beta-home-button-bar">
+      <a ui-sref="betaApp.modulistica()" id="home-button4" style="border-radius:0px 0px 0px 0px;" class="button button-dark button-large button-block icon ion-android-document"></a>
+      <a ui-sref="betaApp.dizionarioDeiRifiuti()" id="home-button5" class="button button-dark button-large button-block icon ion-android-compass"></a>
+      <a ui-sref="betaApp.richiestaDiPreventivo()" id="home-button6" class="button button-dark button-large button-block icon ion-social-euro"></a>
+      <a ui-sref="betaApp.myCalendar({})" id="home-button7" style="border-radius:0px 0px 0px 0px;" class="button button-assertive button-large button-block icon ion-android-calendar"></a>
+    </div>
+    <div id="home-container3" class="beta-home-infos">
+      <div class="spacer" style="width: 305px; height: 5px;"></div>
+      <h2 id="home-heading5" style="color:#FFFFFF;font-weight:400;">It’s so Easy!</h2>
+      <div id="home-markdown8" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;font-size:18px;">Con noi le cose diventano semplici. Affidati ai nostri esperti, rivolgiti a loro per qualsiasi tua esigenza.</p>
+      </div>
+      <a ui-sref="betaApp.lEspertoRisponde()" id="home-button8" style="text-align:right;" class="button button-positive button-large button-block button-icon icon ion-android-arrow-forward"></a>
+    </div>
+    <div id="home-container4" class="beta-container-home-news">
+      <div class="spacer" style="width: 305px; height: 0px;"></div>
+      <h2 id="home-heading9" style="color:#416579;font-weight:400;">News</h2>
+      <ion-list id="home-list4">
+        <ion-item class="item-thumbnail-left item-icon-right dark beta-news-item" id="home-list-item39" ui-sref="betaApp.news2({&quot;blogID&quot;:&quot;&quot;+blog.guid+&quot;&quot;})" ng-repeat="blog in blogs">
+          <img src="https://app.itsoeasy.it{{blog.icon}}">
+          <h2dark>{{blog.title}}
+            <p>{{blog.time_created}}</p>
+            <i class="icon ion-android-add icon-accessory"></i>
+          </h2dark>
+        </ion-item>
+      </ion-list>
+      <ion-list id="home-list11">
+        <ion-item class="item-icon-right dark beta-all-news-btn-item" id="home-list-item104" ui-sref="betaApp.news()">
+          <i class="icon ion-android-arrow-forward"></i>
+        </ion-item>
+      </ion-list>
+      <div class="spacer" style="width: 305px; height: 7px;"></div>
+    </div>
+  </ion-content>
+</ion-view>

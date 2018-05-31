@@ -1,0 +1,22 @@
+<ion-view title="News" id="page2">
+  <ion-content padding="true" class="has-header">
+    <div class="list card beta-card-list" id="news-card23" ng-repeat="blog in blogs">
+      <div id="news-container9">
+        <h2 id="news-heading13" style="color:#416579;">{{blog.title}}</h2>
+      </div>
+      <div class=" item item-image">
+        <img src="https://app.itsoeasy.it{{blog.icon}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <ion-item class="item-icon-left dark beta-list-infos" id="news-list-item93">
+        <i class="icon ion-android-time"></i>{{blog.time_created}}</ion-item>
+      <div class="item item-body ext-beta-border-none" id="news-list-item-container5">
+        <div id="news-markdown14" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">{{blog.excerpt}}</p>
+        </div>
+      </div>
+      <ion-item class="item-icon-right positive border-top-none" id="news-list-item91" ui-sref="betaApp.news2({&quot;blogID&quot;:&quot;&quot;+blog.guid+&quot;&quot;})">Leggi l'articolo
+        <i class="icon ion-android-arrow-forward"></i>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

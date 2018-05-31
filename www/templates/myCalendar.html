@@ -1,0 +1,131 @@
+<ion-view title="My Calendar" cache-view="false" id="page22">
+  <ion-content padding="false" class="has-header">
+    <div id="myCalendar-button-bar13" class="button-bar beta-ritiri-bar">
+      <button id="myCalendar-button45" ng-class="{'active' : activeSection==1}" ng-click="changeSection(1)" class="button button-assertive button-block icon ion-log-in"></button>
+      <button id="myCalendar-button51" ng-class="{'active' : activeSection==2}" ng-click="changeSection(2)" class="button button-assertive button-block icon ion-android-time"></button>
+      <button id="myCalendar-button49" ng-class="{'active' : activeSection==3}" ng-click="changeSection(3)" class="button button-assertive button-block icon ion-android-cart"></button>
+      <button id="myCalendar-button50" ng-class="{'active' : activeSection==4}" ng-click="changeSection(4)" class="button button-assertive button-block icon ion-android-clipboard"></button>
+    </div>
+    <div id="myCalendar-container17" ng-show="activeSection==1" class="beta-container">
+      <div id="myCalendar-container23" ng-show="activeLoginSection===1">
+        <h3 id="myCalendar-heading19" style="color:#EF473A;">Login</h3>
+        <div id="myCalendar-markdown9" class="show-list-numbers-and-dots beta-mycalendar-container">
+          <p style="margin-top:0px;color:#F2323C;">Per accedere a questa sezione é neccessario possedere le credenziali riservate ai clienti 'Beta'. Le credenziali vi sono state inviate al momento della sottoscrizione del vostro contratto. Se non le ricordate o le avete smarrite potete conttare
+            il servizio clienti</p>
+        </div>
+        <form id="myCalendar-form10" class="list">
+          <div class="spacer" style="width: 290px; height: 32px;"></div>
+          <label class="item item-input item-stacked-label" id="myCalendar-input13" name="username">
+            <span class="input-label">Username</span>
+            <input type="text" placeholder="" ng-model="data.username">
+          </label>
+          <label class="item item-input item-stacked-label" id="myCalendar-input12" name="password">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="" ng-model="data.password">
+          </label>
+        </form>
+        <button id="myCalendar-button19" ng-click="sendRequest()" class="button button-assertive button-full icon ion-log-in"></button>
+      </div>
+      <div id="myCalendar-container24" ng-show="activeLoginSection==2">
+        <h3 id="myCalendar-heading21" style="color:#EF473A;">Logout</h3>
+        <div id="myCalendar-markdown15" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">Clicca per effettuare il logout</p>
+        </div>
+        <button id="myCalendar-button26" ng-click="sendLogout()" class="button button-assertive button-block icon ion-log-in"></button>
+      </div>
+    </div>
+    <div id="myCalendar-container20" ng-show="activeSection==2" class="beta-container">
+      <h3 id="myCalendar-heading22" style="color:#EF473A;">Prossimi ritiri</h3>
+      <div id="myCalendar-markdown11" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">In questa sezione puoi vedere i ritiri confermati, che non sono stati ancora effettuati, e i ritiri che hai richiesto e che sono ancora in attesa di conferma </p>
+      </div>
+      <div id="myCalendar-container15" class="beta-align-right">
+        <button id="myCalendar-button15" ng-click="getNextPickups()" class="button button-assertive icon ion-android-refresh"></button>
+      </div>
+      <div class="spacer" style="width: 290px; height: 25px;"></div>
+      <div id="myCalendar-container25" class="beta-ritiri-items-container">
+        <div id="myCalendar-markdown16" ng-show="pickupsLength==0" class="show-list-numbers-and-dots beta-container">
+          <p style="color:#000000;">Al momento non hai richieste di ritiri in attesa</p>
+        </div>
+        <ion-list id="myCalendar-list12">
+          <ion-item class="item-icon-left assertive beta-ritiri-item" id="myCalendar-list-item98" ui-sref="betaApp.dettaglioDelRitiro({&quot;pickupID&quot;:&quot;&quot;+pickup.guid+&quot;&quot;})" ng-repeat="pickup in pickups" ng-show="{{pickups}}">
+            <i class="icon ion-android-cart"></i>
+            <small class="date">{{pickup.date_pickup}}</small>
+            <br>{{pickup.title}}
+            <br>
+            <small class="status">{{pickup.status_pickup}}</small>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div id="myCalendar-container22" ng-show="activeSection==3" class="beta-container">
+      <h3 id="myCalendar-heading23" style="color:#EF473A;">Storico dei ritiri effettuati</h3>
+      <div id="myCalendar-markdown12" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">In questa sezione puoi vedere i ritiri confermati che sono stati eseguiti in ordine di data decrescente</p>
+      </div>
+      <div id="myCalendar-container16" class="beta-align-right">
+        <div class="spacer" style="width: 290px; height: 20px;"></div>
+        <button id="myCalendar-button18" ng-click="getOldPickups()" class="button button-assertive icon ion-android-refresh"></button>
+        <div class="spacer" style="width: 290px; height: 25px;"></div>
+      </div>
+      <div id="myCalendar-container14" class="beta-ritiri-items-container">
+        <div id="myCalendar-container18">
+          <div id="myCalendar-markdown10" ng-show="oldPickupsLength==0" class="show-list-numbers-and-dots beta-container">
+            <p style="color:#000000;">Non ci sono ritiri effettuati nel tuo storico.</p>
+          </div>
+        </div>
+        <ion-list id="myCalendar-list19">
+          <ion-item class="item-icon-left assertive beta-ritiri-item" id="myCalendar-list-item105" ui-sref="betaApp.dettaglioDelRitiro({&quot;pickupID&quot;:&quot;&quot;+oldpick.guid+&quot;&quot;})" ng-repeat="oldpick in oldPickups" ng-show="{{oldpick.guid}}">
+            <i class="icon ion-android-cart"></i>
+            <small class="date">{{oldpick.date_pickup}}</small>
+            <br>{{oldpick.title}}
+            <br>
+            <small class="status">{{oldpick.status_pickup}}</small>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div id="myCalendar-container12" ng-show="activeSection==4" class="beta-container">
+      <h3 id="myCalendar-heading14" style="color:#EF473A;">Domanda di ritiro</h3>
+      <div id="myCalendar-markdown13" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">In questa sezione puoi richiedere un ritiro. </p>
+      </div>
+      <div class="spacer" style="width: 290px; height: 25px;"></div>
+      <form id="myCalendar-form12" class="list">
+        <label class="item item-input item-stacked-label" id="myCalendar-input11">
+          <span class="input-label">Codice cer</span>
+          <input type="text" placeholder="" ng-model="dtForm.codice_cer">
+        </label>
+        <div class="spacer" style="width: 290px; height: 13px;"></div>
+        <p>
+          Non conosci il codice del rifiuto che vuoi smaltire?
+          <br>
+          <a style="color:#F2323C" ui-sref="betaApp.dizionarioDeiRifiuti">Clicca e cercalo nel dizionario dei rifiuti, una volta nel dettaglio della voce del dizionario clicca su "Fai un adomanda di ritiro'</a>
+        </p>
+        <div class="spacer" style="width: 290px; height: 24px;"></div>
+        <label class="item item-input item-stacked-label" id="myCalendar-input16">
+          <span class="input-label">Peso stimato</span>
+          <input type="text" placeholder="" ng-model="dtForm.weight">
+        </label>
+        <label class="item item-input item-stacked-label" id="myCalendar-input17">
+          <span class="input-label">Data desiderata</span>
+          <input type="date" placeholder="" ng-model="dtForm.date_pickup">
+        </label>
+        <label class="item item-input item-stacked-label" id="myCalendar-input18">
+          <span class="input-label">Orario desiderato</span>
+          <input type="time" placeholder="" ng-model="dtForm.time_pickup">
+        </label>
+        <label class="item item-input item-stacked-label" id="myCalendar-input19">
+          <span class="input-label">Note</span>
+          <input type="text" placeholder="" ng-model="dtForm.description">
+        </label>
+        <div class="spacer" style="width: 290px; height: 13px;"></div>
+        <div class="beta-uploaded-image">
+          <img src="{{imgUri}}" id="beta-uploaded-image" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <button id="myCalendar-button13" ng-click="takePicture()" class="button button-stable button-block button-outline icon ion-camera"></button>
+        <button id="myCalendar-button14" ng-click="sendPickupRequest()" class="button button-assertive button-block icon ion-android-upload"> Inivia richiesta</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

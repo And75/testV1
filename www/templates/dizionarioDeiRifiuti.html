@@ -1,0 +1,20 @@
+<ion-view title="Dizionario dei rifiuti" id="page7" style="background-color:#EBEBEB;">
+  <ion-content padding="false" class="has-header">
+    <div id="dizionarioDeiRifiuti-container10" class="beta-container-search">
+      <form id="dizionarioDeiRifiuti-form6" class="list" ng-submit="search()">
+        <label class="item item-input" id="dizionarioDeiRifiuti-search5" name="moduli-search">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="Cerca nei moduli..." ng-model="data.search">
+        </label>
+      </form>
+    </div>
+    <ion-list id="dizionarioDeiRifiuti-list25">
+      <ion-item class="item-icon-right dark beta-list-item" id="dizionarioDeiRifiuti-list-item97" ui-sref="betaApp.dizionarioDeiRifiuti2({&quot;voiceID&quot;:&quot;&quot;+voice.guid+&quot;&quot;})" ng-repeat="voice in thesaurus">{{voice.title}}
+        <i class="icon ion-ios-information-outline icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+    <div id="dizionarioDeiRifiuti-container11" class="beta-container">
+      <button id="dizionarioDeiRifiuti-button12" ng-click="pagination()" class="button button-positive button-block">Mostra piu risultati</button>
+    </div>
+  </ion-content>
+</ion-view>

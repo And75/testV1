@@ -1,23 +1,320 @@
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
-
-// The path for our ionicons font files, relative to the built CSS in www/css
+$positive: #7FA1B6;
+$stable: #CBCBCB;
+$dark: #416579;
+$calm: #E8EAF6;
+$balanced: #BCCED7;
+$assertive: #F2323C;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.bar {
+	height: 55px;
+	box-shadow: 0px 0px 2px #333e44;
+}
 
-// Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+.bar.bar-dark {
+	border: 0;
+}
+
+.bar.bar-positive {
+	background: #7fa1b6 url('data: image/png;
+	base64,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') !important;
+	background-position: right 10px !important;
+	background-repeat: no-repeat !important;
+	background-size: 70px 37px !important;
+	border-color: #7fa1b6 !important;
+}
+
+.platform-android .bar .title {
+	font-size: 15px;
+	line-height: 55px;
+}
+
+.has-header {
+	top: 54px;
+}
+
+.beta-container {
+	padding: 15px;
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+	min-height: 80px;
+	margin: 10px 0;
+	padding-left: 90px;
+}
+
+.item-thumbnail-left > img: first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img: first-child, .item-thumbnail-left .item-content .item-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 80px;
+	max-height: 80px;
+	width: 100%;
+	height: 100%;
+}
+
+.button-bar > .button: before, .button-bar > .button .icon: before {
+	line-height: 55px;
+	font-size: 30px;
+}
+
+.beta-home-button-bar {
+	margin: -8px 0 0;
+}
+
+.beta-home-infos {
+	padding: 14px 7.5px 5px;
+	margin: -10px 0 0;
+	background: #7fa1b6;
+}
+
+.beta-display-none {
+	display: none;
+}
+
+.menuBackground {
+	background: #ebebeb;
+}
+
+.menu-side-items {
+	background: none;
+	font-size: 14px;
+	border: none;
+	.item-content {
+		background: none;
+	}
+	
+	.item-complex.item-icon-left .item-content {
+		padding-left: 40px;
+	}
+	
+	.item-content .icon {
+		font-size: 24px;
+	}
+	
+}
+.beta-home-menu {
+	background: red;
+}
+
+.beta-container-search {
+	padding: 15px;
+	background: #bcced7;
+}
+
+.beta-container-news {
+	padding: 15px;
+	background: #e3f2fd;
+}
+
+.beta-container-home-news {
+	background: #fff;
+	padding: 7.5px;
+}
+
+.beta-news-item {
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid #ebebeb;
+	padding: 15px 0;
+}
+
+.beta-news-item: last-child {
+	border-bottom: 0;
+}
+
+.beta-news-item .item-content {
+	margin: 0px;
+	background: transparent !important;
+}
+
+.beta-news-item img {
+	margin: 0;
+	border-radius: 50px;
+}
+
+.item-thumbnail-left.beta-news-item .item-content {
+	padding-left: 90px;
+	padding-right: 5px;
+	white-space: normal;
+	font-size: 20px;
+}
+
+.beta-all-news-btn-item {
+	background: transparent;
+	border: 0;
+}
+
+.beta-item-infos {
+	font-size: 12px;
+	padding: 5px 18px;
+	border: 0;
+}
+
+.beta-item-infos .icon {
+	font-size: 12px;
+	left: -10px;
+}
+
+.beta-list-item .item-content {
+	white-space: normal;
+}
+
+.beta-list-infos {
+	border: 0;
+}
+
+.beta-list-infos,
+.beta-list-infos a {
+	font-size: 12px;
+}
+
+.beta-list-infos.item-icon-left {
+	padding-left: 44px;
+}
+
+.beta-list-infos .icon,
+.beta-list-infos a .icon {
+	font-size: 20px;
+}
+
+.beta-list-title {
+	font-size: 20px;
+}
+
+.beta-button-round {
+	background: #80A3B7 !important;
+	color: #fff !important;
+}
+
+.beta-page-intro {
+	border: 0;
+	font-size: 20px;
+	white-space: normal;
+}
+
+.beta-mycalendar-login {
+	padding: 5px;
+	line-height: 14px;
+}
+
+.beta-mycalendar-container {
+	border: 1px solid #f2323c;
+	padding: 10px;
+}
+
+.beta-ritiri-bar {
+	margin: -9px 0 0 !important;
+	padding-bottom: 0;
+}
+
+.beta-ritiri-bar .button.button-assertive.active, .button.button-assertive.activated {
+	border-color: transparent;
+	background-color: #ffffff;
+	color: #a2a2a2;
+}
+
+.beta-ritiri-bar .button {
+	border-radius: 0 !important;
+}
+
+.beta-ritiri-items-container {
+	margin: 0 -15px;
+}
+
+.beta-ritiri-item {
+	min-height: 40px;
+	margin: 0;
+	border: 0;
+	padding: 0 15px;
+}
+
+.beta-ritiri-item: nth-child(odd) {
+	background-color: #efefef;
+}
+
+.beta-ritiri-item a.item-content {
+	padding-top: 5px;
+	padding-left: 75px !important;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	min-height: 40px;
+	background: transparent;
+	font-size: 14px;
+	line-height: 15px;
+}
+
+.beta-ritiri-item a.item-content .icon {
+	left: 0px;
+	padding: 15px;
+	background: #cccccc47;
+	width: 66px;
+}
+
+.beta-ritiri-item a.item-content small.status {
+	text-transform: uppercase;
+	font-size: 10px;
+	color: #555;
+}
+
+.beta-ritiri-item a.item-content small.date {
+	color: #000;
+}
+
+.beta-card-list {}
+.beta-card-list h2 {
+	line-height: 1em;
+	padding: 13px;
+	font-size: 25px;
+}
+
+.beta-content h1 {
+	font-size: 30px;
+	color: #416579 !important;
+	padding: 15px 0 0;
+	line-height: 30px;
+}
+
+.border-top-none {
+	border-top: 0;
+}
+
+.ext-beta-border-none {
+	border: 0;
+}
+
+.beta-content .item-icon-left {
+	left: 0;
+	padding-left: 29px;
+}
+
+.beta-content .item-icon-left .icon {
+	left: -4px;
+}
+
+.item-complex.item-icon-right .item-content {
+	padding-right: 28px;
+}
+
+.beta-content h1.thesaurus-title {
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.betapp-menu-header {
+	font-size: 14px;
+	color: #416579 !important;
+	padding: 0px 15px 14px;
+	line-height: 21px;
+	text-transform: uppercase;
+	border-bottom: 2px solid #ccc;
+}
+
+.beta-align-right {
+	text-align: right;
+}
+
+.beta-title-modal {
+	text-align: center;
+}
 

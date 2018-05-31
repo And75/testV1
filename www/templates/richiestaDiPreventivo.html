@@ -1,0 +1,32 @@
+<ion-view title="Richiesta di preventivo" id="page9">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="richiestaDiPreventivo-list23">
+      <ion-item class="item-thumbnail-left dark beta-page-intro" id="richiestaDiPreventivo-list-item50">
+        <img src="img/yYsHllshTcCkf0a9e0Jv_currency-eur.png">
+        <h2dark>Vuoi preventivare uno smaltimento?
+          <p style="white-space:normal;">Hai la necessità di un preventivo? Compila il form e riceverai una risposta da un nostro consulente. </p>
+        </h2dark>
+      </ion-item>
+    </ion-list>
+    <form id="richiestaDiPreventivo-form9" class="list">
+      <label class="item item-input item-stacked-label" id="richiestaDiPreventivo-input8">
+        <span class="input-label">Nome e cognome</span>
+        <input type="text" placeholder="" ng-model="data.name">
+      </label>
+      <label class="item item-input item-stacked-label" id="richiestaDiPreventivo-input9">
+        <span class="input-label">Indirizzo email</span>
+        <input type="text" placeholder="" ng-model="data.email">
+      </label>
+      <label class="item item-input item-stacked-label" id="richiestaDiPreventivo-input10">
+        <span class="input-label">La tua domanda</span>
+        <input type="text" placeholder="" ng-model="data.description">
+      </label>
+      <div class="spacer" style="width: 300px; height: 11.9886px;"></div>
+      <div>
+        <img id="beta-estimate-uploaded-image" src="{{imgUri}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;" ng-model="data.picture">
+      </div>
+      <button id="richiestaDiPreventivo-button20" ng-click="takePicture()" class="button button-stable button-block button-outline icon ion-android-camera"></button>
+      <button id="richiestaDiPreventivo-button30" ng-click="registerData()" ng-disable="submitting" class="button button-positive button-block icon ion-android-upload"> Invia richiesta</button>
+    </form>
+  </ion-content>
+</ion-view>
