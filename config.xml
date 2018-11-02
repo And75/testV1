@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.itsoeasy.app" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.itsoeasy.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>It's so easy</name>
     <description>L’applicazione che aiuta le imprese nella gestione dei rifiuti speciali, non pericolosi e pericolosi.</description>
     <author email="info@camera203.it" href="http:www.camera203.it">Camera203</author>
